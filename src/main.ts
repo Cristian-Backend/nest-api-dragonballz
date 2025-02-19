@@ -16,6 +16,16 @@ async function bootstrap() {
     }) 
   );
 
+
+  //Habilitar cors
+  app.enableCors({
+    origin: 'http://127.0.0.1:5500', // Permite solicitudes solo desde tu frontend
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: 'Content-Type,Authorization'
+  });
+  
+
+
   await app.listen(process.env.PORT || 3001);
 }
 bootstrap();
