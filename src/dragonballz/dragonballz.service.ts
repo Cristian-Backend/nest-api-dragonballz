@@ -34,7 +34,7 @@ async create(createDragonballzDto: CreateDragonballzDto) {
     return this.dragonballzModel.find()
     .limit(limit) // limite de 5 pokemons.
     .skip( offset )// saltar 5 pokemons.
-    .sort({no: 1}) // ordenar por numero de pokemon.
+    .sort({np: 1}) // ordenar por numero de pokemon.
     .select('-__v') // quitar el __v
   }
 
