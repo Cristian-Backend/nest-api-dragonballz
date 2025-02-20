@@ -28,8 +28,12 @@ export class SeedService {
         throw new Error('❌ No se encontraron personajes en la API');
       }
 
-      // 3. Transformar los datos
-      const charactersToInsert = items.map(({ name, id }) => ({ name, np: id }));
+      // 3. Transformar los datos e incluir las imágenes
+      const charactersToInsert = items.map(({ name, id, image }) => ({
+        name,
+        np: id,
+        images: image, // Guardar la URL de la imagen
+      }));
 
       // 4. Insertar en la base de datos
       await this.dragonballzModel.insertMany(charactersToInsert);
