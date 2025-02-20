@@ -19,6 +19,11 @@ export class Dragonballz extends Document{
 
      np : number
 
+    @Prop({
+        unique: true,
+    })
+
+     images: string;
 }
 
 export const DragonballzSchema = SchemaFactory.createForClass(Dragonballz);
