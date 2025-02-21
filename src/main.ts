@@ -19,7 +19,7 @@ async function bootstrap() {
 
   //Habilitar cors
   app.enableCors({
-    origin: 'http://127.0.0.1:5500', // Permite solicitudes solo desde tu frontend
+    origin: ['http://127.0.0.1:5500', 'https://tubular-eclair-4fae91.netlify.app'], 
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: 'Content-Type,Authorization'
   });
